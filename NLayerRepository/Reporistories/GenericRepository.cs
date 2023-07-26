@@ -43,7 +43,7 @@ namespace NLayerRepository.Reporsitories
                    EqualityComparer<DbSet<T>>.Default.Equals(_dbSet, repository._dbSet);
         }
 
-        public IQueryable<T> GetAll(Expression<Func<T, bool>> expression)
+        public IQueryable<T> GetAll()
         {
             return _dbSet.AsNoTracking().AsQueryable();
         }
