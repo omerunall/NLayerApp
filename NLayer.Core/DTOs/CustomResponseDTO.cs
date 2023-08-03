@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Reflection.Metadata.Ecma335;
 using System.Security.Principal;
 using System.Text;
 using System.Text.Json.Serialization;
@@ -17,7 +18,6 @@ namespace NLayer.Core.DTOs
         public int StatusCode { get; set; }
 
         public List<String> Errors { get; set; }
-
         public static CustomResponseDTO<T> Success(int statusCode, T data)
         {
             return new CustomResponseDTO<T> { Data = data, StatusCode = statusCode };
