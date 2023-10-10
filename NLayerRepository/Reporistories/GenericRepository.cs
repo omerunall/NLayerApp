@@ -11,7 +11,7 @@ namespace NLayerRepository.Reporsitories
 {
     public class GenericRepository<T> : IGenericRepository<T> where T : class
     {
-        protected readonly AppDbContext _context;
+        public readonly AppDbContext _context;
 
         private readonly DbSet<T> _dbSet;
 

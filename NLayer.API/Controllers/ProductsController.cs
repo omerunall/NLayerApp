@@ -8,31 +8,26 @@ using NLayerService.Services;
 
 namespace NLayer.API.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
+
     public class ProductsController : CustomBaseController
     {
         private readonly IMapper _mapper;
-        private readonly IService<Product> _productService;
-        private readonly IProductService _productService1;
+        private readonly IProductService _productService;
 
         public ProductsController(IMapper mapper, IService<Product> productService, IProductService productService1)
         {
             _mapper = mapper;
-            _productService = productService;
-            _productService1 = productService1;
+
+            _productService = productService1;
         }
 
         // api/products/GetProductWithCategory
         [HttpGet("action")]
         public async Task<IActionResult> GetProductWithCategory()
         {
-            return CreateActionResult(await _productService1.GetProductWithCategory());
 
-
+            return CreateActionResult(await _productService.GetProductWithCategory());
         }
-
-
         [HttpGet]
         public async Task<IActionResult> All()
         {
